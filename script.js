@@ -1,4 +1,3 @@
-<script>
 
     const quizData = [
         {
@@ -54,4 +53,3 @@
         document.getElementById("wrong-btn").textContent = currentData.wrongAnswer;
         document.getElementById("flag-img").src = currentData.flagimage;
     }
-</script>
