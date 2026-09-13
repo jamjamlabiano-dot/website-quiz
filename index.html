@@ -3,7 +3,128 @@
 <head>
     <meta charset="UTF-8">
 <title>"Guess the Country!"</title>
-<link> rel="stylesheet" href="stylesheet.css"</link> 
+<style>
+@font-face {
+    font-family: "Super Mario 256";
+    src: url(SuperMario256.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+body{
+    font-family: "Super Mario 256", sans-serif;
+    text-align: center;
+    background-image: url();
+}
+
+.font-for-buttons1{
+    font-family: "Super Mario 256", sans-serif;
+    border-width: 10px;
+    border-color:brown;
+    background-image: url();
+    background-color:brown;
+    width: ;
+    height: ;
+    font-size: ;
+}
+
+.font-for-buttons2{
+    font-family: "Super Mario 256", sans-serif;
+    border-width: 10px;
+    border-color: whitesmoke;
+    background-image: url();
+    background-color: whitesmoke;
+}
+
+.section-green{
+    color: green;
+    font-size: 20px;
+}
+
+.section-red{
+    color:red;
+    font-size: 20px;
+}
+
+.section-white{
+        color:  whitesmoke;
+        font-size: 20px;
+}
+
+.section-darkgreen{
+        color: darkgreen;
+        font-size: 20px
+}
+
+.section-darkblue{
+    color: darkblue;
+    font-size: 20px
+}
+
+.location-for-button1 {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+</style>
+<script>
+
+    const quizData = [
+        {
+            question: "Question 1: What Flag is this?",
+            correctAnswer: "Philippines",
+            wrongAnswer: "USA",
+            flagimage: "pngtree-cute-philippines-flag-realistic-with-3d-shadow-effect-png-image_4559472.png"
+        },
+        {
+            question: "Question 2: What Flag is this?",
+            correctAnswer: "USA",
+            wrongAnswer: "Columbia",
+            flagimage: "images.png",
+        }
+    ];
+
+    let currentImageIndex = 0;
+    let score = 0;
+
+    function handleCorrect(){
+        document.getElementById("gameplay-section").style.display = "none";
+        document.getElementById("correct-section").style.display = "block";
+        score++;
+        document.getElementById("score-for-button").textContent = "Score: " + score;
+    }
+    function handleWrong() {
+        document.getElementById("gameplay-section").style.display = "none";
+        document.getElementById("wrong-section").style.display = "block";
+    }
+
+    function nextQuestion() {
+        if (currentImageIndex < quizData.length - 1) {
+            currentImageIndex++;
+            updateGameScreen();
+        document.getElementById("correct-section").style.display = "none";
+        document.getElementById("wrong-section").style.display = "none";
+        document.getElementById("gameplay-section").style.display = "block";
+        }
+        else {
+            alert("Quiz Completed!");
+        }
+    }
+
+    //function goBack() {
+        //document.getElementById("wrong-section").style.display = "none";
+        //document.getElementById("gameplay-section").style.display = "block";
+    //}
+
+    function updateGameScreen() {
+        const currentData = quizData[currentImageIndex];
+        document.getElementById("question-title").textContent = currentData.question;
+        document.getElementById("correct-btn").textContent = currentData.correctAnswer;
+        document.getElementById("wrong-btn").textContent = currentData.wrongAnswer;
+        document.getElementById("flag-img").src = currentData.flagimage;
+    }
+</script>
 </head>
 <body>
 <!-- SCORE SECTION -->
@@ -48,6 +169,5 @@
         </div>
     </div>
 <!-- END OF WRONG PAGE SECTION -->
-    <script> scr="script.js" </script>
 </body> 
 </html>
