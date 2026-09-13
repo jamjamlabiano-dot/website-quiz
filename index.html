@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>"Guess the Country!"</title>
+</head>
+<body>
+<!-- SCORE SECTION -->
+    <div>
+    <h1 id="score-for-button">Score: 0</h1>
+    </div>
+<!-- END OF SCORE SECTION -->
+
+<!-- QUESTION SECTION -->
+    <div id="gameplay-section">
+        <div style ="margin: 0 auto">
+        <img id="flag-img" src="pngtree-cute-philippines-flag-realistic-with-3d-shadow-effect-png-image_4559472.png">
+        </div>
+        <div>
+            <h1 id="question-title">Question 1: What Flag is this?</h1>
+            <button id="correct-btn" onclick="handleCorrect()" class="section-white font-for-buttons1">Philippines</button>
+            <button id="wrong-btn" onclick="handleWrong()" class="section-white font-for-buttons1">USA</button>
+        </div> 
+    </div>
+<!-- END OF QUESTION SECTION -->
+
+<!-- CORRECT PAGE SECTION -->
+    <div id="correct-section" style="display: none">
+        <div style="margin: 0 auto">
+        <img src = "14441011.png">
+        </div>
+        <div class ="section-green">
+        <h1>Correct!</h1>
+        <button onclick="nextQuestion()" class="section-green font-for-buttons2">Proceed!</button>
+        </div>
+    </div>
+<!-- END OF CORRECT PAGE SECTION -->
+
+<!-- WRONG PAGE SECTION -->
+    <div id="wrong-section" style="display: none">
+        <div style="margin: 0 auto">
+        <img src = "istockphoto-1147541870-612x612.jpg">
+        </div>
+        <div class ="section-red">
+        <h1>Wrong!</h1>
+        <button onclick="nextQuestion()" class="section-red font-for-buttons2">Proceed!</button>
+        </div>
+    </div>
+<!-- END OF WRONG PAGE SECTION -->
+</body> 
+</html>
